@@ -1,0 +1,25 @@
+
+/*!
+*  _entry.scss
+* -----------------------------------
+*/
+
+#entry {
+
+    input {
+
+        &.code {
+
+            height: 100px;
+            width: 100px;
+            font-size: 4em;
+            padding: 28px;
+            line-height: 83px;
+            text-transform:uppercase;
+
+        }
+
+    }
+
+
+}

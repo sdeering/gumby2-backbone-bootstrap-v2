@@ -1,0 +1,73 @@
+<div id="home">
+
+    <h1>Register</h1>
+
+        <!-- <h4 class="lead">Text Inputs</h4> -->
+        <form id="register-form">
+        <ul>
+            <li class="field">
+                <label class="inline" for="first-name">*First Name</label>
+                <input class="normal text input" name="first-name" type="text" placeholder="First Name">
+            </li>
+            <li class="field">
+                <label class="inline" for="last-name">*Last Name</label>
+                <input class="normal text input" name="last-name" type="text" placeholder="Last Name">
+            </li>
+            <li class="field">
+                <label class="inline" for="email">*Email</label>
+                <input class="normal email input" name="email" type="email" placeholder="Email">
+            </li>
+            <li class="field">
+                <label class="inline" for="mobile">Mobile</label>
+                <input class="normal phone input" name="mobile" type="tel" placeholder="Mobile">
+            </li>
+
+            <li class="field success"><input class="text input" type="text" placeholder="Text input"></li>
+            <li class="field warning"><input class="email input" type="email" placeholder="Email input"></li>
+            <li class="field danger"><input class="password input" type="password" placeholder="Password input"></li>
+
+            <li class="field">
+                <label class="inline" for="centre">*Centre</label>
+                <div class="picker">
+                  <select name="centre">
+                    <option value="#" disabled="" selected>Select Centre...</option>
+                    <option value="1">Centre 1</option>
+                    <option value="2">Centre 2</option>
+                    <option value="3">Centre 3</option>
+                    <option value="4">Centre 4</option>
+                    <option value="5">Centre 5</option>
+                  </select>
+                </div>
+            </li>
+
+            <li class="field">
+              <label class="checkbox" for="termsChk">
+                <input name="termsChk[]" id="termsChk" type="checkbox">
+                <span></span> I agree to <a href="#terms" class="switch active modal-iscroll" data-scroll-name="termsScroll" gumby-trigger="#modal-terms">Terms & Conditions</a>
+              </label>
+            </li>
+
+            <form>
+                    <ul>
+                        <li class="field">
+                            <label class="checkbox" for="checkbox1">
+                                <input name="checkbox1" type="checkbox" id="checkbox1">
+                                <span></span> Checkbox 1
+                            </label>
+                            <label class="checkbox" for="checkbox2">
+                                <input name="checkbox2" type="checkbox" id="checkbox2">
+                                <span></span> Checkbox 2
+                            </label>
+                            <label class="checkbox" for="checkbox3">
+                                <input name="checkbox3" checked="checked" type="checkbox" id="checkbox3">
+                                <span></span> Checkbox 3
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+
+            <div class="medium primary btn"><a id="register-submit" href="#entry">REGISTER</a></div>
+        </ul>
+        </form>
+
+</div>
