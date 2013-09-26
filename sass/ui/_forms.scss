@@ -14,6 +14,7 @@ form {
     &.inline {
       display: inline-block;
       padding-right: 20px;
+      min-width: 120px;
     }
   }
   dt {

@@ -12,6 +12,7 @@ window.FooterView = Backbone.View.extend({
             {
                 console.log('FOOTER view controller init...');
 
+
                 //modals with touch scrollbars - modals are in FooterView.html
                 $('.modal-iscroll').on(Gumby.click, function(e)
                 {
@@ -20,10 +21,24 @@ window.FooterView = Backbone.View.extend({
                     //it needs to be visible for it to work...
                     setTimeout(function()
                     {
-                        console.log('modal iscroll...');
-                        console.log(scrollName);
-                        window[scrollName] = new iScroll(scrollName);
+                        if (!window[scrollName].wrapper) {
+                            console.log('modal iscroll...');
+                            console.log(scrollName);
+                            window[scrollName] = new iScroll(scrollName);
+                        }
+                        else
+                        {
+                            window[scrollName].scrollTo(0,0);
+                        }
                     }, 10);
+
+                });
+
+                //auto check terms when accept on modal
+                $('#terms-ok').on(Gumby.click, function(e)
+                {
+                    $('#termsChk').trigger('gumby.check');
+                    $('#termsChk').attr('checked', 'checked');
                 });
 
             }
