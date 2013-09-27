@@ -42,9 +42,17 @@
 
             <li class="field">
               <label class="checkbox" for="termsChk">
-                <input name="termsChk[]" id="termsChk" type="checkbox">
+                <input name="termsChk" id="termsChk" value="1" type="checkbox" class="required" required>
                 <span></span> I agree to <a href="#terms" class="switch active modal-iscroll" data-scroll-name="termsScroll" gumby-trigger="#modal-terms">Terms & Conditions</a>
               </label>
+            </li>
+
+            <li class="field">
+                <label class="" for="captcha">*Verication Code. Please enter the code shown in the field below.</label>
+                <div id="captcha-wrap">
+                    <img src="/img/refresh.jpg" alt="refresh captcha" id="refresh-captcha" /> <img src="/php/newCaptcha.php" alt="" id="captcha" />
+                </div>
+                <input class="narrow text input" id="captcha" name="captcha" type="text" placeholder="Verification Code">
             </li>
 
             <form>

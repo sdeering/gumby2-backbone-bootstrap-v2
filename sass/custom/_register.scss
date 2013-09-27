@@ -25,3 +25,67 @@
     }
 
 }
+
+
+#captcha-wrap {
+
+    float: left;
+    width: 220px;
+
+    img {
+
+        float: left;
+
+    }
+
+    #refresh-captcha {
+
+        padding: 5px;
+        width: 35px;
+        margin-top: 7px;
+
+    }
+
+}
+
+input#captcha {
+
+    margin-top: 7px;
+
+}
+
+
+/* responsive overrides */
+
+body {
+
+    min-width: 320px;
+
+}
+
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+
+}
+
+/* mobiles */
+@media (max-width: 767px) {
+
+    .field {
+
+        input[type=text], input[type=email], input[type=tel] {
+
+            width: 100%;
+
+        }
+
+    }
+
+    label.error {
+        margin-left: 0;
+    }
+
+}

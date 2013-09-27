@@ -4,10 +4,11 @@ Gumby2 Backbone Bootstrap Upgrade - (Version 2)
 Lightning fast web application bootstrap.
 
     * + Latest version of Gumby2 (includes latest versions of jQuery)
+    * + Framework Style Updates
     * + Login Form
     * + Register Form
     * + jQuery Form Validation
-    * + Framework Style Updates
+    * + jQuery/PHP Captcha
     * + New Page Template
     * + Asset Preloading when App loads
     * + iScroll for Modals

@@ -10,4 +10,53 @@ footer {
     padding-top: 15px;
     border-top: 1px solid #DDD;
 
+    p {
+
+        font-size: 0.8em;
+
+    }
+
 }
+
+
+/* modals */
+
+#prize-info {
+
+    img {
+
+        height: 100px;
+
+    }
+
+}
+
+/* responsive modal */
+
+.modal {
+
+    &.responsive {
+
+        .content {
+
+            height: 600px;
+            top: 60px;
+            width: 80%;
+            max-width: 800px;
+
+        }
+
+    }
+
+    &.small {
+
+        .content {
+
+            min-height: 200px;
+
+        }
+
+    }
+
+}
+

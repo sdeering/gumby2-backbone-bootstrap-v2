@@ -38,6 +38,8 @@ window.RegisterView = Backbone.View.extend({
             eventHandlers: function()
             {
                 var _this = this;
+
+                //submit register form
                 this.cache.formSubmit.on(Gumby.click, function(e)
                 {
                     e.preventDefault();
@@ -45,22 +47,12 @@ window.RegisterView = Backbone.View.extend({
                     _this.cache.form.submit();
                 });
 
-                //checkbox fix
-                $('input.checkbox').on(Gumby.click, function(e) {
-                    var thisChk = $(this);
-                    if (thisChk.hasClass('checked'))
-                    {
-                        thisChk.find('span').html('');
-                        thisChk.find('input[type=checkbox]').removeAttr("checked");
-                        thisChk.removeClass('checked');
-                    }
-                    else
-                    {
-                        thisChk.find('input[type=checkbox]').attr("checked", "checked");
-                        thisChk.find('span').html('<i class="icon-check"></i>');
-                        thisChk.addClass('checked');
-                    }
+                //new captcha
+                $('#refresh-captcha').on(Gumby.click, function(e)
+                {
+                    $('img#captcha').attr("src","/php/newCaptcha.php?rnd=" + Math.random());
                 });
+
             },
 
             setupValidation: function()
@@ -101,8 +93,23 @@ window.RegisterView = Backbone.View.extend({
                         "centre": {
                             "required": true
                         },
-                        "terms": {
+                        "termsChk": {
                             "required": true
+                        },
+                        "captcha": {
+                            "required": true,
+                            "remote" :
+                            {
+                              url: '/php/checkCaptcha.php',
+                              type: "post",
+                              data:
+                              {
+                                  code: function()
+                                  {
+                                      return $(':input[name="captcha"]').val();
+                                  }
+                              }
+                            }
                         }
                     },
                     messages: {
@@ -116,8 +123,10 @@ window.RegisterView = Backbone.View.extend({
                         "centre": {
                             "required": "Please select your nearest Centre."
                         },
-                        "terms": {
-                            "required": "Please confirm you have read our Terms & Conditions."
+                        "termsChk": "Please confirm you have read our Terms & Conditions.",
+                        "captcha": {
+                            "required": "Please enter the verifcation code.",
+                            "remote": "Verication code incorrect, please try again."
                         }
                     },
                     submitHandler: function(form)
@@ -150,69 +159,6 @@ window.RegisterView = Backbone.View.extend({
 
                     }
 
-                });
-
-            },
-
-            getCentreData: function()
-            {
-                var _this = this;
-
-                /* -------- AJAX GET POSTCODE DATA ----------------------------------------------------- */
-                //cache this data in browser HTML5
-
-                var checkMembershipRequest = $.ajax({
-                    type: "GET",
-                    dataType: "JSON",
-                    url: "/php/suburbs.php"
-                });
-
-                checkMembershipRequest.done(function(data)
-                {
-                    // console.log(data);
-                    // localStorage.postcodeData = JSON.stringify(data);
-                    _this.data.suburbs = data.suburbs;
-                    $.each(_this.data.suburbs, function(i,v)
-                    {
-                        _this.cache.$suburbs.append('<option data-value='+i+' data-postcode='+v.postcode+' data-state='+v.state+'>'+i+'</option>');
-                    });
-
-                    //hook up data handler when suburb is changed
-                    _this.cache.$suburbInput.on('change, blur', function()
-                    {
-                        var $el = $(this);
-
-                        //slight delay needed for plugin to register change
-                        setTimeout(function()
-                        {
-                            var val = $el.val(),
-                                selected = _this.data.suburbs[val],
-                                postcode = selected.postcode,
-                                state = selected.state;
-
-                            if (postcode)
-                            {
-                                _this.cache.$postcodeInput.val(postcode);
-                            }
-
-                            if (state)
-                            {
-                                _this.cache.$stateInput.val(state);
-                            }
-
-                        }, 300);
-
-                    });
-
-                    //hook up drop down auto complete
-                    _this.cache.$suburbInput.relevantDropdown();
-
-                });
-
-                checkMembershipRequest.fail(function(jqXHR, textStatus)
-                {
-                    console.log( "postcode request fail - an error occurred: (" + textStatus + ")." );
-                    //try again...
                 });
 
             },

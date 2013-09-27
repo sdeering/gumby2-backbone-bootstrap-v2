@@ -2363,7 +2363,7 @@ i.icon-logo-db:before { content: "\f603"; height: inherit; }
 /* Form Styles */
 form { margin: 0 0 18px; }
 form label { display: block; font-size: 16px; font-size: 1rem; line-height: 1.625em; cursor: pointer; margin-bottom: 9px; }
-form label.inline { display: inline-block; padding-right: 20px; }
+form label.inline { display: inline-block; padding-right: 20px; min-width: 120px; }
 form dt { margin: 0; }
 form textarea { height: 150px; }
 form ul, form ul li { margin-left: 0; list-style-type: none; }
@@ -2514,7 +2514,7 @@ form fieldset legend { padding: 5px 10px; }
 .alert.success { background: #91e26a; border: 1px solid #58c026; color: #316b15; }
 
 /* validation errors */
-label.error { color: red; }
+label.error { color: red; margin-left: 135px; font-size: 0.9em; }
 
 /* Tabs */
 .tabs { display: block; }
@@ -2634,6 +2634,14 @@ header ul.nav li.active .btn.secondary { background-color: #6dbb80; }
 * -----------------------------------
 */
 footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #DDD; }
+footer p { font-size: 0.8em; }
+
+/* modals */
+#prize-info img { height: 100px; }
+
+/* responsive modal */
+.modal.responsive .content { height: 600px; top: 60px; width: 80%; max-width: 800px; }
+.modal.small .content { min-height: 200px; }
 
 body { background: #B9B9B9; }
 
@@ -2655,6 +2663,19 @@ body { background: #B9B9B9; }
 #register label.checkbox span { width: 28px; height: 27px; top: 7px; }
 #register label.checkbox span i { margin: 0 9px; }
 
+#captcha-wrap { float: left; width: 220px; }
+#captcha-wrap img { float: left; }
+#captcha-wrap #refresh-captcha { padding: 5px; width: 35px; margin-top: 7px; }
+
+input#captcha { margin-top: 7px; }
+
+/* responsive overrides */
+body { min-width: 320px; }
+
+/* tablets */
+/* mobiles */
+@media (max-width: 767px) { .field input[type=text], .field input[type=email], .field input[type=tel] { width: 100%; }
+  label.error { margin-left: 0; } }
 /*
 *  _entry.scss
 * -----------------------------------
