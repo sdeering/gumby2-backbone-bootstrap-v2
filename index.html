@@ -38,7 +38,8 @@
 	<link rel="stylesheet" href="css/gumby.css">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 
-	<script src="js/libs/modernizr-2.6.2.min.js"></script>
+	<!-- // <script src="js/libs/modernizr-2.6.2.min.js"></script> -->
+    <script data-main="js/app" src="js/libs/require.js"></script>
 </head>
 
 <body>
@@ -48,11 +49,9 @@
             <div id="main" class="span12"></div>
         </div>
     </div>
-	<!-- <div id="main" class="container"></div> -->
 
-	<!-- Grab Google CDN's jQuery, fall back to local if offline -->
-	<!-- 2.0 for modern browsers, 1.10 for .oldie -->
-	<script>
+
+	<!-- 	<script>
 	var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
 	if(!oldieCheck) {
 	document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
@@ -70,12 +69,12 @@
 	}
 	</script>
 
+
 	<script src="js/libs/gumby.min.js"></script>
 	<script src="js/libs/underscore.min.js"></script>
 	<script src="js/libs/backbone.min.js"></script>
 	<script src="js/plugins.js"></script>
 
-    <!-- backbone incs -->
     <script src="js/utils.js"></script>
     <script src="js/views/home.js"></script>
     <script src="js/views/login.js"></script>
@@ -86,8 +85,9 @@
     <script src="js/views/testing.js"></script>
     <script src="js/router.js"></script>
 
-    <!-- init -->
+
     <script src="js/main.js"></script>
+    -->
 
 	<!-- Change UA-XXXXX-X to be your site's ID -->
 	<!--<script>

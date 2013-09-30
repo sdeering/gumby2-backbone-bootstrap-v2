@@ -12,6 +12,7 @@ Lightning fast web application bootstrap.
     * + New Page Template
     * + Asset Preloading when App loads
     * + iScroll for Modals
+    * + Web app js dependencies managed by require.js
 
 
 
